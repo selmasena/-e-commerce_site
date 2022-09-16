@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 2500,
+      "categoryId": 1,
+      "description": "Asus Zenbook",
+      "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60"
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "price": 100,
+      "categoryId": 2,
+      "description": "LogiTech Mouse",
+      "imageUrl": "https://resource.logitech.com/w_800,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m190-wireless-mouse/m190-wireless-mouse-midgrey-glamour-lg.png?v=1"
+    },
+    {
+      "name": "Telephone",
+      "description": "İphone",
+      "imageUrl": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=90&.v=1617135051000",
+      "price": "44000",
+      "categoryId": "2",
+      "id": 2
+    },
+    {
+      "name": "Tablet",
+      "description": "Huawei",
+      "imageUrl": "https://s.turkcell.com.tr//SiteAssets/Cihaz/notebook-tablet/samsung/galaxy-tab-a8-10-5/cg/1/1_600x450.png",
+      "price": "9.000",
+      "categoryId": "1",
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Computer"
+    },
+    {
+      "id": 2,
+      "name": "Elektronic"
+    }
+  ]
+}
