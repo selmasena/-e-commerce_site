@@ -1,0 +1,49 @@
+<h3 *ngIf="products ; else noProduct">{{title}}</h3>
+<!--products arrayinde tanımlı data varsa göster *ngIf="products" data yok ve tanımlı değilse gösterme
+else noProduct ürün yoksa gösterilecek alan 
+alanın adı da noProduct
+-->
+<app-category></app-category>
+
+<div class="row">
+<ng-template #noProduct>
+    <!--Sadece çağırınca aktifleşen bir alan-->
+
+    <div class="alert alert-primary" role="alert">
+        There are no products in this category.
+    </div>
+
+
+</ng-template>
+
+  <div class="form-group">
+    
+    <input 
+    class="form-control" 
+    id="productname" 
+    aria-describedby="emailHelp"
+    placeholder="Enter your search text"
+    [(ngModel)]="filterText"
+    />
+
+    <div *ngIf="filterText" class="form-text text muted">Showing results for <strong>{{filterText}}</strong> </div>
+    <br>
+  </div>
+<div class="row">
+    <div *ngFor="let product of products | productfilter:filterText" class="productbox" style="width: 18rem;"> <!--| bu pipe işareti-->
+        <!--ngFor ile döngü yazılır.-->
+        <img [src]="product.imageUrl" class="card-img-top" alt="..."> <!--src bağlamak için [src]-->
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}} <!--product.name|lowercase--> {{product.price|currency:'₺':false:"1.2-2"}} <!--sadece currency yazarsan $ işareti kullanır. ama usd:false dersen usd olarak yazar.--></h5>
+            <p class="card-text">{{product.description}}</p>
+            <a (click)="addToCart(product)" class="btn btn-primary">Add to cart</a><!--addtocard diye bir fonksiyon var.-->
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+</div>

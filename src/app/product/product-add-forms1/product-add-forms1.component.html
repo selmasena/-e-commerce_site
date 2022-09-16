@@ -1,0 +1,53 @@
+<!-- klasik form  -->
+
+<br>
+<h3>Add New Product</h3>
+
+<form #productAddForm="ngForm" (ngSubmit)="add(productAddForm)">
+
+    <div class="form-group">
+
+        <input type="text" placeholder="Product name" #name="ngModel" [(ngModel)]="model.name" class="form-control"
+            name="name" id="name" required>
+        <div *ngIf="name.invalid&&name.dirty" class="alert alert-danger">The product name is required.</div>
+        <!-- name invalid yani geçersiz ise / isim adı boş gelsin diye dirty yazıyoruz . -->
+    </div>
+
+    <br>
+
+    <div class="form-group">
+        <input type="text" placeholder="Description" #description="ngModel" [(ngModel)]="model.description"
+            class="form-control" name="description" id="description" required>
+        <div *ngIf="description.invalid&&description.dirty" class="alert alert-danger">Product description is required. </div>
+
+    </div>
+    <br>
+
+
+    <div class="form-group">
+        <input type="text" placeholder="Product image" #imageUrl="ngModel" [(ngModel)]="model.imageUrl"
+            class="form-control" name="imageUrl" id="imageUrl" required>
+        <div *ngIf="imageUrl.invalid&&imageUrl.dirty" class="alert alert-danger">Product image is required. </div>
+
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="text" placeholder="Product price" #price="ngModel" [(ngModel)]="model.price" class="form-control"
+            name="price" id="price" required>
+        <div *ngIf="price.invalid&&price.dirty" class="alert alert-danger">Product price is required. </div>
+
+    </div>
+    <br>
+    <div class="form-group ">
+        <select #categoryId="ngModel" [(ngModel)]="model.categoryId" required id="categoryId" name="categoryId">
+
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+        <div *ngIf="categoryId.invalid&&categoryId.touched" class="alert alert-danger">Category required.. </div>
+        <!--touched seçmediğimiz zaman uyarı gelsin diye yazıldı.-->
+
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="productAddForm.invalid">Add</button>
+    <br>
+</form>
